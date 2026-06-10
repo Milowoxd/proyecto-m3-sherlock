@@ -108,3 +108,32 @@ Este proyecto fue desarrollado con asistencia de Claude (Anthropic):
 - Google Gemini 2.5 Flash
 - Vercel Serverless Functions
 - Vitest
+
+## Registro de uso de AI
+
+Este proyecto fue desarrollado con asistencia de Claude (Anthropic) como herramienta de aprendizaje.
+
+### Prompts utilizados y decisiones tomadas
+
+**1. Estructura del proyecto**
+- Prompt: "¿Cómo organizar una SPA en vanilla JS con routing, chat y serverless functions?"
+- Decisión: Separar responsabilidades en app.js (routing), chat.js (lógica del chat) y utils.js (funciones puras).
+
+**2. System prompt de Sherlock**
+- Prompt: "Diseña un system prompt para Sherlock Holmes que mantenga el personaje y dé respuestas cortas."
+- Decisión: Limitar a máximo 2 oraciones por respuesta y definir reglas estrictas de personalidad.
+
+**3. Serverless Function**
+- Prompt: "¿Por qué usar module.exports en vez de export default en Vercel Functions?"
+- Decisión: Las Vercel Functions corren en Node.js con CommonJS, no ES Modules. El frontend usa ES Modules porque corre en el navegador.
+
+**4. Configuración de vercel.json**
+- Prompt: "¿Cómo configurar vercel.json para que sirva archivos estáticos y una serverless function?"
+- Decisión: Usar rewrites para separar rutas /api de las rutas de la SPA.
+
+**5. Tests unitarios**
+- Prompt: "¿Qué funciones son las más importantes para testear en este proyecto?"
+- Decisión: Testear las funciones puras de utils.js porque no dependen de la red ni del DOM.
+
+**6. Debugging**
+- Se usó AI para resolver errores de MIME type, rutas duplicadas (src/src/) y configuración de modelos de Gemini.

@@ -39,7 +39,7 @@ function renderChat() {
         </div>
       </div>
       <div class="typing-indicator" id="typing-indicator" style="display:none">
-        Sherlock está deduciendo...
+        Sherlock está deduciendo
       </div>
       <div class="chat-input-area">
         <textarea 
