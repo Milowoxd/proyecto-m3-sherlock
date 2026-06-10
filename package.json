@@ -4,10 +4,10 @@
   "description": "SPA para chatear con Sherlock Holmes usando Gemini AI",
   "main": "src/index.html",
   "scripts": {
-    "dev": "vercel dev",
-    "test": "vitest",
-    "test:run": "vitest run"
-  },
+  "start": "vercel dev",
+  "test": "vitest",
+  "test:run": "vitest run"
+},
   "keywords": ["spa", "gemini", "sherlock", "chat"],
   "author": "Milowoxd",
   "license": "ISC",
