@@ -6,7 +6,7 @@ SPA para chatear con Sherlock Holmes usando Google Gemini AI.
 
 ##  Demo
 
-[Ver aplicación desplegada](https://proyecto-m3-sherlock-bb8ha26zr-milo-s-projects5.vercel.app/)
+[Ver aplicación desplegada](https://proyecto-m3-sherlock.vercel.app)
 
 ##  El Personaje
 
