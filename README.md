@@ -1,42 +1,45 @@
- # 🔍 Sherlock Holmes Chat
+ #  Sherlock Holmes Chat
 
 SPA para chatear con Sherlock Holmes usando Google Gemini AI.
 
 ![Sherlock Holmes Chat](https://img.shields.io/badge/Gemini-AI-blue) ![Vercel](https://img.shields.io/badge/Deploy-Vercel-black)
 
-## 🌐 Demo
+##  Demo
 
 [Ver aplicación desplegada](https://proyecto-m3-sherlock-bb8ha26zr-milo-s-projects5.vercel.app/)
 
-## 🕵️ El Personaje
+##  El Personaje
 
 Sherlock Holmes es el detective ficticio más famoso de la literatura, creado por Arthur Conan Doyle en 1887. Conocido por su método deductivo, su violín, su pipa y su dirección en 221B Baker Street, Londres. En esta aplicación podrás conversar con él y recibir respuestas en su característico tono arrogante y brillante.
 
-## 📁 Estructura del proyecto
+##  Estructura del proyecto
+
+```
 proyecto-m3-sherlock/
 ├── api/
-│   └── functions.js        # Vercel Serverless Function (proxy seguro)
+│   └── functions.js
 ├── src/
-│   ├── index.html          # HTML principal
-│   ├── styles.css          # Estilos mobile-first
-│   ├── app.js              # Routing SPA con History API
-│   ├── chat.js             # Lógica del chat
-│   └── utils.js            # Funciones utilitarias
+│   ├── index.html
+│   ├── styles.css
+│   ├── app.js
+│   ├── chat.js
+│   └── utils.js
 ├── tests/
-│   ├── utils.test.js       # Tests de utils
-│   └── app.test.js         # Tests de routing
+│   ├── utils.test.js
+│   └── app.test.js
 ├── .env.example
 ├── vercel.json
 └── README.md
+```
 
-## ⚙️ Requisitos
+##  Requisitos
 
 - Node.js v18 o superior
 - Cuenta en Vercel
 - API key de Google Gemini (aistudio.google.com)
 - Vercel CLI instalado: `npm install -g vercel`
 
-## 🚀 Ejecutar localmente
+##  Ejecutar localmente
 
 1. Clona el repositorio:
 ```bash
@@ -68,13 +71,13 @@ vercel dev
 
 7. Abre el navegador en `http://localhost:3000`
 
-## 🧪 Ejecutar tests
+##  Ejecutar tests
 
 ```bash
 npm run test:run
 ```
 
-## 📦 Desplegar en Vercel
+##  Desplegar en Vercel
 
 1. Conecta el repositorio en vercel.com
 2. Agrega la variable de entorno `GEMINI_API_KEY` en el dashboard
@@ -82,8 +85,7 @@ npm run test:run
 ```bash
 vercel --prod
 ```
-
-## 🤖 Registro de uso de AI
+##  Registro de uso de AI
 
 Este proyecto fue desarrollado con asistencia de Claude (Anthropic):
 
@@ -93,11 +95,11 @@ Este proyecto fue desarrollado con asistencia de Claude (Anthropic):
 - **Debugging**: Se usó AI para resolver errores de configuración de `vercel.json` y rutas de archivos estáticos.
 - **Tests**: Se usó AI para diseñar los casos de test de funciones utilitarias.
 
-## 📸 Capturas de pantalla
+## Capturas de pantalla
 
 *(Agregar capturas de la aplicación funcionando)*
 
-## 🛠️ Tecnologías
+## Tecnologías
 
 - HTML + CSS + JavaScript vanilla
 - Google Gemini 2.5 Flash
