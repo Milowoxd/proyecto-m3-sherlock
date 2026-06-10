@@ -65,7 +65,7 @@ async function sendMessage() {
     appendMessage('sherlock', replyText);
 
   } catch (error) {
-    appendMessage('error', 'Error al conectar con Sherlock. Inténtalo de nuevo.');
+    appendMessage('error', 'Holmes no está disponible en este momento. Quizás está en uno de sus experimentos. Inténtalo en un momento.');
   } finally {
     showTyping(false);
     setInputEnabled(true);
