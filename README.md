@@ -19,17 +19,20 @@ proyecto-m3-sherlock/
 ├── api/
 │   └── functions.js
 ├── src/
-│   ├── index.html
-│   ├── styles.css
 │   ├── app.js
 │   ├── chat.js
+│   ├── styles.css
 │   └── utils.js
 ├── tests/
 │   ├── utils.test.js
 │   └── app.test.js
+├── index.html
 ├── .env.example
+├── .gitignore
 ├── vercel.json
+├── package.json
 └── README.md
+```
 ```
 
 ##  Requisitos
