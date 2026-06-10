@@ -296,3 +296,12 @@ body {
     font-size: 2.5rem;
   }
 }
+.message-error {
+  background-color: #2a1a1a;
+  border-left: 3px solid #e53935;
+  align-self: center;
+  width: 100%;
+  font-family: var(--font-ui);
+  font-size: 0.85rem;
+  padding: 0.75rem 1rem;
+}

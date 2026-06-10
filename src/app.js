@@ -1,8 +1,13 @@
- // ============================================
-// ROUTING - SPA con History API
+// ============================================
+// APP.JS - Routing principal SPA
 // ============================================
 
-// Las tres vistas en HTML
+import { initChat } from './chat.js';
+
+// ============================================
+// VISTAS
+// ============================================
+
 function renderHome() {
   return `
     <div class="home-container">
@@ -81,7 +86,7 @@ function renderAbout() {
 }
 
 // ============================================
-// MOTOR DE ROUTING
+// ROUTING
 // ============================================
 
 const routes = {
@@ -91,21 +96,20 @@ const routes = {
   '/about': renderAbout,
 };
 
+export function navigateTo(path) {
+  history.pushState({}, '', path);
+  renderView(path);
+}
+
 function renderView(path) {
   const app = document.getElementById('app');
   const renderFn = routes[path] || renderHome;
   app.innerHTML = renderFn();
   updateActiveLink(path);
 
-  // Si la vista es chat, inicializa los eventos
   if (path === '/chat') {
     initChat();
   }
-}
-
-function navigateTo(path) {
-  history.pushState({}, '', path);
-  renderView(path);
 }
 
 function updateActiveLink(path) {
@@ -118,10 +122,9 @@ function updateActiveLink(path) {
 }
 
 // ============================================
-// EVENTOS DE NAVEGACIÓN
+// EVENTOS
 // ============================================
 
-// Intercepta clicks en los links del navbar
 document.addEventListener('click', (e) => {
   if (e.target.matches('.nav-link')) {
     e.preventDefault();
@@ -129,14 +132,15 @@ document.addEventListener('click', (e) => {
   }
 });
 
-// Maneja botones back/forward del navegador
 window.addEventListener('popstate', () => {
   renderView(window.location.pathname);
 });
+
+// Hace navigateTo global para el onclick del botón
+window.navigateTo = navigateTo;
 
 // ============================================
 // INIT
 // ============================================
 
-// Renderiza la vista inicial al cargar la página
 renderView(window.location.pathname);
