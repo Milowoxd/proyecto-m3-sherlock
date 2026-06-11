@@ -209,7 +209,7 @@ window.loadSessionById = function (sessionId) {
 };
 
 window.clearAllChats = function () {
-  if (!confirm('¿Borrar todas las conversaciones?')) return;
+  if (!confirm('¿Eliminar todas las conversaciones con Holmes? Esta acción no se puede deshacer.')) return;;
   localStorage.removeItem('sherlock-sessions');
   window.newChat();
 };
