@@ -70,8 +70,12 @@ function renderSidebar() {
   container.innerHTML = sorted.map(session => `
     <div class="session-item ${session.id === currentSessionId ? 'active' : ''}"
          onclick="loadSessionById('${session.id}')">
-      <div class="session-title">${session.title}</div>
+      <div class="session-title" id="title-${session.id}">${session.title}</div>
       <div class="session-date">${formatDate(session.updatedAt)}</div>
+      <div class="session-actions">
+        <button class="btn-session-action" onclick="event.stopPropagation(); renameSession('${session.id}')" title="Renombrar">✏️</button>
+        <button class="btn-session-action btn-delete" onclick="event.stopPropagation(); deleteSession('${session.id}')" title="Eliminar">🗑</button>
+      </div>
     </div>
   `).join('');
 }
@@ -212,4 +216,30 @@ window.clearAllChats = function () {
   if (!confirm('¿Eliminar todas las conversaciones con Holmes? Esta acción no se puede deshacer.')) return;;
   localStorage.removeItem('sherlock-sessions');
   window.newChat();
+};
+window.renameSession = function(sessionId) {
+  const sessions = getSessions();
+  const session = sessions[sessionId];
+  if (!session) return;
+
+  const newTitle = prompt('Nuevo nombre para esta conversacion:', session.title);
+  if (!newTitle || !newTitle.trim()) return;
+
+  sessions[sessionId].title = newTitle.trim();
+  localStorage.setItem('sherlock-sessions', JSON.stringify(sessions));
+  renderSidebar();
+};
+
+window.deleteSession = function(sessionId) {
+  if (!confirm('Eliminar esta conversacion?')) return;
+
+  const sessions = getSessions();
+  delete sessions[sessionId];
+  localStorage.setItem('sherlock-sessions', JSON.stringify(sessions));
+
+  if (currentSessionId === sessionId) {
+    window.newChat();
+  } else {
+    renderSidebar();
+  }
 };

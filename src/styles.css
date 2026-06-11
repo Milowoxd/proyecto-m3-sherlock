@@ -515,3 +515,40 @@ body {
     padding: 0.875rem 2rem;
   }
 }
+.session-item {
+  position: relative;
+}
+
+.session-actions {
+  display: none;
+  position: absolute;
+  right: 0.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  gap: 0.25rem;
+  background: var(--bg-hover);
+  border-radius: var(--radius-sm);
+  padding: 0.1rem;
+}
+
+.session-item:hover .session-actions {
+  display: flex;
+}
+
+.btn-session-action {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0.2rem 0.3rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.75rem;
+  transition: background 0.15s;
+}
+
+.btn-session-action:hover {
+  background: var(--border-light);
+}
+
+.btn-delete:hover {
+  background: var(--error);
+}
