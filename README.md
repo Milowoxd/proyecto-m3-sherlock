@@ -36,7 +36,18 @@ proyecto-m3-sherlock/
 ├── package.json
 └── README.md
 ```
+## Capturas de pantalla
 
+**Vista Home**
+![Home](screenshots/inicio.jpg)
+
+**Vista Chat**
+![Chat](screenshots/chat.jpg)
+
+**Vista About**
+![About](screenshots/about.jpg)
+
+---
 ---
 
 ## Requisitos previos
