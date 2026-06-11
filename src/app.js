@@ -28,31 +28,47 @@ function renderHome() {
 
 function renderChat() {
   return `
-    <div class="chat-container">
-      <div class="chat-messages" id="chat-messages">
-        <div class="message message-sherlock">
-          <div class="message-sender">Sherlock Holmes</div>
-          <div class="message-text">
-            Elemental, mi estimado visitante. Ha llegado hasta aquí con alguna pregunta en mente. 
-            No pierda el tiempo con formalismos, dígame directamente qué necesita.
+    <div class="chat-layout">
+      <aside class="chat-sidebar">
+        <div class="sidebar-header">
+          <button class="btn-new-chat" onclick="newChat()">+ Nuevo chat</button>
+        </div>
+        <div class="sidebar-sessions" id="sidebar-sessions">
+          <p class="sidebar-empty">Sin conversaciones guardadas</p>
+        </div>
+        <div class="sidebar-footer">
+          <button class="btn-clear" onclick="clearAllChats()">🗑 Borrar todo</button>
+        </div>
+      </aside>
+      <div class="chat-main">
+        <div class="chat-messages" id="chat-messages">
+          <div class="message message-sherlock">
+            <div class="message-sender">Sherlock Holmes</div>
+            <div class="message-text">
+              Elemental, mi estimado visitante. No pierda el tiempo con formalismos, dígame directamente qué necesita.
+            </div>
           </div>
         </div>
-      </div>
-      <div class="typing-indicator" id="typing-indicator" style="display:none">
-        Sherlock está deduciendo
-      </div>
-      <div class="chat-input-area">
-        <textarea 
-          class="chat-input" 
-          id="chat-input" 
-          placeholder="Escriba su consulta..." 
-          rows="2"
-        ></textarea>
-        <button class="btn-send" id="btn-send">Enviar</button>
+        <div class="typing-indicator" id="typing-indicator" style="display:none">
+          Sherlock está deduciendo
+        </div>
+        <div class="chat-input-wrapper">
+          <div class="chat-input-area">
+            <textarea
+              class="chat-input"
+              id="chat-input"
+              placeholder="Escriba su consulta..."
+              rows="1"
+            ></textarea>
+            <button class="btn-send" id="btn-send">➤</button>
+          </div>
+        </div>
       </div>
     </div>
   `;
 }
+
+
 
 function renderAbout() {
   return `
