@@ -1,139 +1,176 @@
- #  Sherlock Holmes Chat
+# Sherlock Holmes Chat
 
-SPA para chatear con Sherlock Holmes usando Google Gemini AI.
+Single Page Application para conversar con Sherlock Holmes usando Google Gemini AI.
 
-![Sherlock Holmes Chat](https://img.shields.io/badge/Gemini-AI-blue) ![Vercel](https://img.shields.io/badge/Deploy-Vercel-black)
+## Demo en vivo
 
-##  Demo
+[proyecto-m3-sherlock.vercel.app](https://proyecto-m3-sherlock.vercel.app)
 
-[Ver aplicación desplegada](https://proyecto-m3-sherlock.vercel.app)
+---
 
-##  El Personaje
+## El Personaje
 
-Sherlock Holmes es el detective ficticio más famoso de la literatura, creado por Arthur Conan Doyle en 1887. Conocido por su método deductivo, su violín, su pipa y su dirección en 221B Baker Street, Londres. En esta aplicación podrás conversar con él y recibir respuestas en su característico tono arrogante y brillante.
+Sherlock Holmes es el detective ficticio más famoso de la literatura, creado por Arthur Conan Doyle en 1887. Conocido por su método deductivo, su violín, su pipa y su dirección en 221B Baker Street, Londres.
 
-##  Estructura del proyecto
+En esta aplicación podrás conversar con él en su característico tono: brillante, arrogante, preciso y con elegancia victoriana.
+
+---
+
+## Estructura del proyecto
 
 ```
 proyecto-m3-sherlock/
 ├── api/
-│   └── functions.js
+│   └── functions.js        # Vercel Serverless Function (proxy seguro para Gemini)
 ├── src/
-│   ├── app.js
-│   ├── chat.js
-│   ├── styles.css
-│   └── utils.js
+│   ├── app.js              # Routing SPA con History API
+│   ├── chat.js             # Lógica del chat y localStorage
+│   ├── styles.css          # Estilos mobile-first
+│   └── utils.js            # Funciones utilitarias puras
 ├── tests/
-│   ├── utils.test.js
-│   └── app.test.js
-├── index.html
-├── .env.example
-├── .gitignore
-├── vercel.json
+│   ├── utils.test.js       # 10 tests de funciones utilitarias
+│   └── app.test.js         # 4 tests de routing
+├── index.html              # HTML principal
+├── .env.example            # Variables de entorno requeridas
+├── vercel.json             # Configuración de Vercel
 ├── package.json
 └── README.md
 ```
-```
 
-##  Requisitos
+---
+
+## Requisitos previos
 
 - Node.js v18 o superior
 - Cuenta en Vercel
-- API key de Google Gemini (aistudio.google.com)
-- Vercel CLI instalado: `npm install -g vercel`
+- API key de Google Gemini — aistudio.google.com
+- Vercel CLI: `npm install -g vercel`
 
-##  Ejecutar localmente
+---
 
-1. Clona el repositorio:
+## Ejecutar localmente
+
+**1. Clona el repositorio:**
 ```bash
 git clone https://github.com/Milowoxd/proyecto-m3-sherlock.git
 cd proyecto-m3-sherlock
 ```
 
-2. Instala dependencias:
+**2. Instala dependencias:**
 ```bash
 npm install
 ```
 
-3. Crea el archivo `.env`:
+**3. Configura las variables de entorno:**
 ```bash
 cp .env.example .env
 ```
 
-4. Agrega tu API key en `.env`: GEMINI_API_KEY=tu_api_key_aqui
-5. Vincula con Vercel:
+Abre `.env` y agrega tu API key:
+```
+GEMINI_API_KEY=tu_api_key_aqui
+```
+
+**4. Vincula con Vercel:**
 ```bash
 vercel link
 vercel env pull
 ```
 
-6. Ejecuta el servidor local:
+**5. Ejecuta el servidor local:**
 ```bash
 vercel dev
 ```
 
-7. Abre el navegador en `http://localhost:3000`
+**6. Abre en el navegador:**
+```
+http://localhost:3000
+```
 
-##  Ejecutar tests
+Nota: usa `vercel dev` y no Live Server. Live Server no ejecuta las Serverless Functions.
+
+---
+
+## Ejecutar tests
 
 ```bash
 npm run test:run
 ```
 
-##  Desplegar en Vercel
+Resultado esperado: 14 tests pasando en 2 archivos.
 
-1. Conecta el repositorio en vercel.com
-2. Agrega la variable de entorno `GEMINI_API_KEY` en el dashboard
-3. Despliega:
+---
+
+## Desplegar en Vercel
+
+**1. Conecta el repositorio:**
+```bash
+vercel link
+```
+
+**2. Agrega la variable de entorno:**
+```bash
+vercel env add GEMINI_API_KEY
+```
+
+**3. Despliega a producción:**
 ```bash
 vercel --prod
 ```
-##  Registro de uso de AI
 
-Este proyecto fue desarrollado con asistencia de Claude (Anthropic):
+---
 
-- **Estructura del proyecto**: Se usó AI para definir la arquitectura de archivos y la separación de responsabilidades.
-- **System prompt de Sherlock**: Se iteró el prompt con ayuda de AI para definir la personalidad, tono y limitaciones del personaje.
-- **Serverless Function**: Se consultó AI para entender la diferencia entre `module.exports` y `export default` en el contexto de Vercel.
-- **Debugging**: Se usó AI para resolver errores de configuración de `vercel.json` y rutas de archivos estáticos.
-- **Tests**: Se usó AI para diseñar los casos de test de funciones utilitarias.
+## Tecnologías utilizadas
 
-## Capturas de pantalla
+| Tecnología | Uso |
+|---|---|
+| HTML + CSS + JavaScript | Frontend vanilla sin frameworks |
+| History API | Routing SPA sin recargas |
+| Google Gemini 2.5 Flash | Motor de IA |
+| Vercel Serverless Functions | Proxy seguro para la API key |
+| localStorage | Persistencia del historial de chats |
+| Vitest | Tests unitarios |
+| Vercel | Deploy y hosting |
 
-*(Agregar capturas de la aplicación funcionando)*
+---
 
-## Tecnologías
+## Seguridad
 
-- HTML + CSS + JavaScript vanilla
-- Google Gemini 2.5 Flash
-- Vercel Serverless Functions
-- Vitest
+La API key de Gemini nunca se expone en el frontend. El flujo es:
+
+```
+Frontend → /api/functions (Vercel) → Gemini API
+```
+
+La Serverless Function actúa como proxy: recibe los mensajes del frontend, llama a Gemini con la API key desde el servidor, y devuelve la respuesta.
+
+---
 
 ## Registro de uso de AI
 
-Este proyecto fue desarrollado con asistencia de Claude (Anthropic) como herramienta de aprendizaje.
+Este proyecto fue desarrollado con asistencia de Claude (Anthropic) como herramienta de aprendizaje y desarrollo.
 
 ### Prompts utilizados y decisiones tomadas
 
-**1. Estructura del proyecto**
-- Prompt: "¿Cómo organizar una SPA en vanilla JS con routing, chat y serverless functions?"
-- Decisión: Separar responsabilidades en app.js (routing), chat.js (lógica del chat) y utils.js (funciones puras).
+**1. Arquitectura del proyecto**
+- Prompt: "Como organizar una SPA en vanilla JS con routing, chat y serverless functions?"
+- Decisión: Separar responsabilidades en `app.js` (routing), `chat.js` (lógica del chat) y `utils.js` (funciones puras testeables).
 
 **2. System prompt de Sherlock**
-- Prompt: "Diseña un system prompt para Sherlock Holmes que mantenga el personaje y dé respuestas cortas."
-- Decisión: Limitar a máximo 2 oraciones por respuesta y definir reglas estrictas de personalidad.
+- Prompt: "Diseña un system prompt para Sherlock Holmes que mantenga el personaje y de respuestas cortas de maximo 2 oraciones."
+- Decisión: Definir reglas estrictas de personalidad, limitar respuestas a 2 oraciones y manejar preguntas modernas con curiosidad victoriana.
 
 **3. Serverless Function**
-- Prompt: "¿Por qué usar module.exports en vez de export default en Vercel Functions?"
-- Decisión: Las Vercel Functions corren en Node.js con CommonJS, no ES Modules. El frontend usa ES Modules porque corre en el navegador.
+- Prompt: "Por que usar module.exports en vez de export default en Vercel Functions?"
+- Decisión: Las Vercel Functions corren en Node.js con CommonJS. El frontend usa ES Modules porque corre en el navegador. Son sistemas distintos.
 
-**4. Configuración de vercel.json**
-- Prompt: "¿Cómo configurar vercel.json para que sirva archivos estáticos y una serverless function?"
+**4. Configuracion de vercel.json**
+- Prompt: "Como configurar vercel.json para servir archivos estaticos y una serverless function al mismo tiempo?"
 - Decisión: Usar rewrites para separar rutas /api de las rutas de la SPA.
 
-**5. Tests unitarios**
-- Prompt: "¿Qué funciones son las más importantes para testear en este proyecto?"
-- Decisión: Testear las funciones puras de utils.js porque no dependen de la red ni del DOM.
+**5. Debugging**
+- Se uso Claude para resolver errores de configuracion de rutas, MIME types y modelos de Gemini disponibles.
 
-**6. Debugging**
-- Se usó AI para resolver errores de MIME type, rutas duplicadas (src/src/) y configuración de modelos de Gemini.
+**6. Tests unitarios**
+- Prompt: "Que funciones son las mas importantes para testear en este proyecto?"
+- Decisión: Testear las funciones puras de `utils.js` porque no dependen de la red ni del DOM, lo que las hace ideales para unit tests.
