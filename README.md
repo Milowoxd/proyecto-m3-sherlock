@@ -1,18 +1,30 @@
 # Sherlock Holmes Chat
 
-Single Page Application para conversar con Sherlock Holmes usando Google Gemini AI.
+> "Cuando hayas eliminado lo imposible, lo que queda, por improbable que parezca, debe ser la verdad." — Sherlock Holmes
 
-## Demo en vivo
+Aplicación web que permite conversar con Sherlock Holmes, el detective más brillante de la literatura victoriana, mediante inteligencia artificial. Desarrollada como Single Page Application con JavaScript vanilla, integra Google Gemini AI de forma segura a través de Vercel Serverless Functions.
 
-[proyecto-m3-sherlock.vercel.app](https://proyecto-m3-sherlock.vercel.app)
+[![Demo](https://img.shields.io/badge/Ver_Demo-proyecto--m3--sherlock.vercel.app-black?style=for-the-badge&logo=vercel)](https://proyecto-m3-sherlock.vercel.app)
+
+---
+
+## Tecnologias
+
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black)
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=css3&logoColor=white)
+![Google Gemini](https://img.shields.io/badge/Gemini_AI-4285F4?style=flat-square&logo=google&logoColor=white)
+![Vercel](https://img.shields.io/badge/Vercel-000000?style=flat-square&logo=vercel&logoColor=white)
+![Vitest](https://img.shields.io/badge/Vitest-6E9F18?style=flat-square&logo=vitest&logoColor=white)
 
 ---
 
 ## El Personaje
 
-Sherlock Holmes es el detective ficticio más famoso de la literatura, creado por Arthur Conan Doyle en 1887. Conocido por su método deductivo, su violín, su pipa y su dirección en 221B Baker Street, Londres.
+Sherlock Holmes fue creado por Arthur Conan Doyle en 1887 y se convirtió en el detective ficticio más famoso de la historia. Habita en el 221B de Baker Street, Londres, junto a su fiel compañero el Dr. Watson.
 
-En esta aplicación podrás conversar con él en su característico tono: brillante, arrogante, preciso y con elegancia victoriana.
+Su método deductivo, su capacidad de observación y su arrogancia intelectual lo hacen un personaje inconfundible. En esta aplicación responde con su característico tono: preciso, sarcástico y con elegancia victoriana. No esperes que sea amable, pero sí brillante.
+
 
 ---
 
