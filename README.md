@@ -3,11 +3,7 @@
 > "Cuando hayas eliminado lo imposible, lo que queda, por improbable que parezca, debe ser la verdad." — Sherlock Holmes
 
 Aplicación web que permite conversar con Sherlock Holmes, el detective más brillante de la literatura victoriana, mediante inteligencia artificial. Desarrollada como Single Page Application con JavaScript vanilla, integra Google Gemini AI de forma segura a través de Vercel Serverless Functions.
-
-[![Demo](https://img.shields.io/badge/Ver_Demo-proyecto--m3--sherlock.vercel.app-black?style=for-the-badge&logo=vercel)](https://proyecto-m3-sherlock.vercel.app)
-
 ---
-
 ## Tecnologias
 
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black)
@@ -16,6 +12,11 @@ Aplicación web que permite conversar con Sherlock Holmes, el detective más bri
 ![Google Gemini](https://img.shields.io/badge/Gemini_AI-4285F4?style=flat-square&logo=google&logoColor=white)
 ![Vercel](https://img.shields.io/badge/Vercel-000000?style=flat-square&logo=vercel&logoColor=white)
 ![Vitest](https://img.shields.io/badge/Vitest-6E9F18?style=flat-square&logo=vitest&logoColor=white)
+---
+[![Demo](https://img.shields.io/badge/Ver_Demo-proyecto--m3--sherlock.vercel.app-black?style=for-the-badge&logo=vercel)](https://proyecto-m3-sherlock.vercel.app)
+
+---
+
 
 ---
 
